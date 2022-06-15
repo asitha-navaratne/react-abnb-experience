@@ -2,9 +2,9 @@ import star from "../images/Star 1.png";
 
 function Card(props) {
   let badgeText;
-  if (props.item.openSpots === 0) {
+  if (props.openSpots === 0) {
     badgeText = "SOLD OUT";
-  } else if (props.item.location === "Online") {
+  } else if (props.location === "Online") {
     badgeText = "ONLINE";
   }
 
@@ -12,19 +12,19 @@ function Card(props) {
     <div className="card">
       {badgeText && <div className="card--badge">{badgeText}</div>}
       <img
-        src={require(`../images/${props.item.coverImg}`)}
+        src={require(`../images/${props.coverImg}`)}
         alt="card"
         className="card--image"
       />
       <div className="stats">
         <img src={star} alt="star" className="card--star" />
-        <span>{props.item.stats.rating}</span>
-        <span className="grey">({props.item.stats.reviewCount}) &#x2022; </span>
-        <span className="grey">{props.item.location}</span>
+        <span>{props.stats.rating}</span>
+        <span className="grey">({props.stats.reviewCount}) &#x2022; </span>
+        <span className="grey">{props.location}</span>
       </div>
-      <p>{props.item.title}</p>
+      <p>{props.title}</p>
       <p>
-        <span className="bold">From ${props.item.price}</span> / person
+        <span className="bold">From ${props.price}</span> / person
       </p>
     </div>
   );

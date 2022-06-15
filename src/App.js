@@ -8,7 +8,7 @@ import data from "./data.js";
 
 function App() {
   const cardArray = data.map((item) => {
-    return <Card key={item.id} item={item} />;
+    return <Card key={item.id} {...item} />;
   });
 
   return (
