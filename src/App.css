@@ -62,3 +62,8 @@ section {
 .card--star {
   height: 14px;
 }
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+}
